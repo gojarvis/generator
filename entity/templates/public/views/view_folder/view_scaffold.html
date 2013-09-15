@@ -1,0 +1,6 @@
+<section data-ng-controller="<%= _.camelize(name) %>sController" data-ng-init="findOne()">
+	<span>{{<%= name %>.created | date:'medium'}}</span> /
+	<span>{{<%= name %>.user.name}}</span>
+	<h2>{{<%= name %>.title}} <a data-ng-show="global.user._id == <%= name %>.user._id" href="/#!/<%= name %>s/{{<%= name %>._id}}/edit">edit</a></h2>
+	<div>{{<%= name %>.content}}</div>
+</section>

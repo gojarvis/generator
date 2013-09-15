@@ -1,0 +1,11 @@
+<section data-ng-controller="<%= _.camelize(name) %>sController" data-ng-init="find()">
+	<ul>
+		<li data-ng-repeat="<%= name %> in <%= name %>s">
+			<span>{{<%= name %>.created | date:'medium'}}</span> /
+			<span>{{<%= name %>.user.name}}</span>
+			<h2><a data-ng-href="#!/<%= name %>s/{{<%= name %>._id}}">{{<%= name %>.title}}</a></h2>
+			<div>{{<%= name %>.content}}</div>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!<%= name %>s || <%= name %>s.length">No <%= name %>s yet. <br> Why don't you <a href="/#!/<%= name %>s/create">Create One</a>?</h1>
+</section>
