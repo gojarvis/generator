@@ -5,7 +5,9 @@ var yeoman = require('yeoman-generator');
 
 
 var JarvisGenerator = module.exports = function JarvisGenerator(args, options, config) {
-  yeoman.generators.Base.apply(this, arguments);
+  yeoman.generators.Base.apply(this, arguments); 
+
+  this.appPath = this.env.options.appPath;
 
   this.headerFile = this.engine(this.read('jade/_app/views/includes/head.jade'),
      this);
@@ -132,7 +134,10 @@ JarvisGenerator.prototype.app = function app() {
 
     this.directory('common/_app/controllers', 'app/controllers');
     this.directory(this.templateEngine + '/_app/views', 'app/views');
-    this.directory(this.dbAdapter + '/_app/models', 'app/models');
+    
+
+    this.template(this.dbAdapter + '/_app/models/article.js', 'app/models/article.js');
+    this.template(this.dbAdapter + '/_app/models/user.js', 'app/models/user.js');
 
     this.mkdir('config');
 
@@ -159,8 +164,8 @@ JarvisGenerator.prototype.app = function app() {
     this.copy('common/_Procfile', 'Procfile');
     this.copy('common/_travis.yml', 'travis.yml');
 
-    this.on('end', function() {
-        this.installDependencies();
-    });
+    // this.on('end', function() {
+    //     this.installDependencies();
+    // });
 };
 

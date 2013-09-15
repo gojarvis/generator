@@ -3,7 +3,7 @@
     "description": "Mongo",
     "version": "1.0.0",
     "private": false,
-    "author": "Jarvis - A Modern Stack Manager: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).",
+    "author": "Jarvis - A Modern Stack Manager: MongoDB, ExpressJS, AngularJS, NodeJS.",
     "engines": {
         "node": "0.10.x",
         "npm": "1.2.x"

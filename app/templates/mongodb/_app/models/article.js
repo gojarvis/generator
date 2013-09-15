@@ -3,7 +3,8 @@
  */
 
 var Schema = require('jugglingdb').Schema;
-var schema = new Schema('mongodb', {url: 'mongodb://localhost/jugg'});
+    config = require('../../config/config')[env],
+    schema = new Schema('<%= dbAdapter %>', {url: config.db});
 
 var User = require('./user');
 
