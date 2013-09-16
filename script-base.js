@@ -80,3 +80,10 @@ JarvisGenerator.prototype.addToJade = function (text, jadeFile, target) {
     console.log('\nUnable to find '.yellow + jadeFile + '. Reference to '.yellow + scriptPath + ' ' + 'not added.\n'.yellow);
   }
 };
+
+
+
+JarvisGenerator.prototype.updateAppJson = function(clientOrServer,section,whatToPush){
+	var appJson = fs.readFileSync('app.json', 'utf8');
+	console.log(appJson);
+}

@@ -69,6 +69,8 @@ JarvisGenerator.prototype.files = function files() {
   this.template('app/controller_scaffold.js', 'app/controllers/' + this.name + '.js');
   this.template('app/'+this.dbAdapter+'/model_scaffold.js', 'app/models/' + this.name + '.js');
 
+  this.updateAppJson('server',controllers,this.name);
+
   //Generate angular
   this.template('public/modules/controllers/controller_scaffold.js', 'public/modules/' + this.name + 's/controllers/' + this.name + '.js');
   this.template('public/modules/services/service_scaffold.js', 'public/modules/' + this.name +'s/services/' + this.name + '.js');
@@ -91,6 +93,9 @@ JarvisGenerator.prototype.files = function files() {
   this.template('public/modules/views/list_scaffold.html', 'public/modules/' + this.name + 's/views/list.html');
   this.template('public/modules/views/view_scaffold.html', 'public/modules/' + this.name + 's/views/view.html');
 };
+
+
+
 
 
 

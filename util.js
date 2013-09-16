@@ -15,7 +15,7 @@ function rewriteFile (args) {
 
   args.haystack = fs.readFileSync(fullPath, 'utf8');
   console.log(args.needle);
-  
+
   var body = rewrite(args);
 
   fs.writeFileSync(fullPath, body);
@@ -60,3 +60,13 @@ function rewrite (args) {
 
   return lines.join('\n');
 }
+
+function rewriteJson(args) {
+  args.path = args.path || process.cwd();
+  var fullPath = path.join(args.path, args.file);
+  
+  var body = JSON.parseJSON(args.jsonData);
+
+  fs.writeFileSync(fullPath, body);
+}
+
